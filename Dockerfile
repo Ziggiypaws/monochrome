@@ -4,7 +4,11 @@ FROM node:lts-alpine
 WORKDIR /app
 
 # wget is needed for Docker healthcheck
-RUN apk add --no-cache wget
+RUN apk add --no-cache wget curl bash
+
+# Install Bun
+RUN curl -fsSL https://bun.sh/install | bash
+ENV PATH="/root/.bun/bin:${PATH}"
 
 # Copy package files first for caching
 COPY package.json package-lock.json ./

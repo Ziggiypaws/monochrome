@@ -13,6 +13,9 @@ export default defineConfig(({ mode }) => {
                 pocketbase: '/node_modules/pocketbase/dist/pocketbase.es.js',
             },
         },
+        preview: {
+            allowedHosts: ['monochrome.ziggiy.me']
+        },
         optimizeDeps: {
             exclude: ['pocketbase'],
         },
